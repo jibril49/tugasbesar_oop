@@ -1,0 +1,43 @@
+package com;
+
+public class oop {
+    private double gajiPokok;
+    private double tunjangan1;
+    private double tunjangan2;
+    private double bpjs;
+    private double potonganPendapatan;
+
+    public oop(double gajiPokok) {
+        this.gajiPokok = gajiPokok;
+        this.tunjangan1 = gajiPokok * 0.20; // 20% of the basic salary
+        this.tunjangan2 = gajiPokok * 0.75; // 75% of the basic salary
+    }
+
+    public void hitungBPJS() {
+        bpjs = (gajiPokok + tunjangan1 + tunjangan2) * 0.02; // 2% of the total income
+    }
+
+    public void hitungPotonganPendapatan() {
+        potonganPendapatan = (gajiPokok + tunjangan1 + tunjangan2) * 0.05; // 5% of the total income
+    }
+
+    public double hitungGaji() {
+        return (gajiPokok + tunjangan1 + tunjangan2) - bpjs - potonganPendapatan;
+    }
+
+    public static void main(String[] args) {
+        oop karyawan = new oop(5000000);
+
+        karyawan.hitungBPJS();
+        karyawan.hitungPotonganPendapatan();
+
+        double gaji = karyawan.hitungGaji();
+
+        System.out.println("Gaji Pokok: " + karyawan.gajiPokok);
+        System.out.println("Tunjangan 1: " + karyawan.tunjangan1);
+        System.out.println("Tunjangan 2: " + karyawan.tunjangan2);
+        System.out.println("BPJS: " + karyawan.bpjs);
+        System.out.println("Potongan Pendapatan: " + karyawan.potonganPendapatan);
+        System.out.println("Gaji Bersih: " + gaji);
+    }
+}
