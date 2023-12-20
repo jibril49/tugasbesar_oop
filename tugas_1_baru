@@ -1,0 +1,22 @@
+package com;
+
+public class oop {
+    public static double celsiusToFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+
+    public static double fahrenheitToCelsius(double fahrenheit) {
+        return (fahrenheit - 32) * 5 / 9;
+    }
+
+    public static void main(String[] args) {
+        double celsius = 60;
+        double fahrenheit = 140;
+
+        double convertedToFahrenheit = celsiusToFahrenheit(celsius);
+        double convertedToCelsius = fahrenheitToCelsius(fahrenheit);
+
+        System.out.println(celsius + " derajat Celsius sama dengan " + convertedToFahrenheit + " °C");
+        System.out.println(fahrenheit + " derajat Fahrenheit sama dengan " + convertedToCelsius + " °F");
+    }
+}
