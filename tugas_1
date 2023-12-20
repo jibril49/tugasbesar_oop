@@ -1,0 +1,27 @@
+package com;
+
+public class oop {
+    private double celsius;
+
+    public oop(double celsius) {
+        this.celsius = celsius;
+    }
+
+    public double getCelsius() {
+        return celsius;
+    }
+
+    public double getFahrenheit() {
+        return (celsius * 9/5) + 32;
+    }
+
+    public static void main(String[] args) {
+        oop converter = new oop(25);
+        System.out.println("Celcius ke Farenheit");
+        System.out.println("C°: " + converter.getCelsius());
+        System.out.println("C°: " + converter.getFahrenheit());
+        System.out.println("Farenheit ke Celcius");
+        System.out.println("F°: " + converter.getFahrenheit());
+        System.out.println("F°: " + converter.getCelsius());
+    }
+}
