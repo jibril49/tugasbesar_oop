@@ -1,15 +1,19 @@
 package com;
 
-public class oop {
+public class Oop {
+    private String nama;
+    private int usia;
     private double gajiPokok;
-    private double tunjangan1;
+    private double tunjangan1;  // Tunjangan 1 for spouse/children
     private double tunjangan2;
     private double bpjs;
     private double potonganPendapatan;
 
-    public oop(double gajiPokok) {
+    public Oop(String nama, int usia, double gajiPokok, int numberOfChildren) {
+        this.nama = nama;
+        this.usia = usia;
         this.gajiPokok = gajiPokok;
-        this.tunjangan1 = gajiPokok * 0.20; // 20% of the basic salary
+        this.tunjangan1 = gajiPokok * 0.10 * numberOfChildren; // 10% of the basic salary for each child
         this.tunjangan2 = gajiPokok * 0.75; // 75% of the basic salary
     }
 
@@ -26,15 +30,17 @@ public class oop {
     }
 
     public static void main(String[] args) {
-        oop karyawan = new oop(5000000);
+        Oop karyawan = new Oop("John Doe", 30, 5000000, 2); // Example with name, age, and 2 children
 
         karyawan.hitungBPJS();
         karyawan.hitungPotonganPendapatan();
 
         double gaji = karyawan.hitungGaji();
 
+        System.out.println("Nama: " + karyawan.nama);
+        System.out.println("Usia: " + karyawan.usia);
         System.out.println("Gaji Pokok: " + karyawan.gajiPokok);
-        System.out.println("Tunjangan 1: " + karyawan.tunjangan1);
+        System.out.println("\rTunjangan 1: " + karyawan.tunjangan1);
         System.out.println("Tunjangan 2: " + karyawan.tunjangan2);
         System.out.println("BPJS: " + karyawan.bpjs);
         System.out.println("Potongan Pendapatan: " + karyawan.potonganPendapatan);
